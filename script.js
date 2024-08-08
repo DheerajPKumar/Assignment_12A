@@ -57,6 +57,7 @@ var products = [
 
 const cardContainer = document.querySelector('.cardContainer__cards');
 const btnContainer = document.querySelector('.cardContainer__navigation');
+const inputEl = document.querySelector('.cardContainer__input');
 
 let categoryArr= [];
 
@@ -65,7 +66,6 @@ products.forEach(product => {
 });
 
 categoryArr = [...new Set(categoryArr)];
-console.log(categoryArr)
 
 function createButtons(){
     categoryArr.forEach(category => {
@@ -124,6 +124,41 @@ function create(category){
         create('All')
     });
 }
+
+function search(productsFilter) {
+    cardContainer.innerHTML = '';
+
+    productsFilter.forEach(product => {
+        const card = document.createElement('div');
+        const img = document.createElement('img');
+        const desc = document.createElement('p');
+        const price = document.createElement('p');
+        const tag = document.createElement('p');
+
+        img.src = product.image;
+        desc.textContent = product.name;
+        price.textContent = '$' + product.price;
+        tag.textContent = product.category;
+
+        img.classList.add('img');
+        desc.classList.add('desc');
+        price.classList.add('price');
+        tag.classList.add('tag');
+        card.classList.add('card');
+
+        card.appendChild(img);
+        card.appendChild(desc);
+        card.appendChild(price);
+        card.appendChild(tag);
+        cardContainer.appendChild(card);
+    });
+}
+
+inputEl.addEventListener('input', function(){
+    const inputText = inputEl.value.toLowerCase().trim();
+    let nameProducts = products.filter(product => product.name.toLowerCase().includes(inputText));
+    search(nameProducts);
+});
 
 create('All');
 
