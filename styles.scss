@@ -6,7 +6,6 @@
 
 .cardContainer{
     width: 80%;
-    // background-color: yellow;
     margin: 0 auto;
 
     &__heading{
@@ -17,6 +16,8 @@
     &__input{
         width: 100%;
         padding: 10px;
+        margin-top: 10px;
+        font-size: 16px;
     }
 
     &__navigation{
@@ -26,6 +27,7 @@
         gap: 20px;
 
         &-btn{
+            margin: 15px 0;
             font-size: 16px;
             padding: 10px 20px;
             border: none;
@@ -36,19 +38,45 @@
     }
 
     &__cards{
-        background-color: gold;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
-        // row-gap: 20px;
         
     }
 }
 
 .card{
-    background-color: rgb(51, 173, 98);
-    padding: 20px;
-    border-radius: 5px;
+    padding: 14px;
+    border-radius: 6px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    // place-self: center;
+    border: 0.1px solid #989595;
+}
+
+.img{
+    width: 100%;
+    border-radius: 6px;
+}
+
+.desc{
+    font-size: 23px;
+    margin: 15px 0;
+}
+
+.price{
+    font-size: 18px;
+    font-weight: 600;
+    color: red;
+    margin-top: 20px;
+}
+
+.tag{
+    background-color: rgba(121, 121, 116, 0.5);
+    padding: 5px 10px;
+    border-radius: 15px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: fit-content;
 }
