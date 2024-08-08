@@ -46,12 +46,6 @@ var products = [
         price: 14.99, 
         category: "Books", 
         image: "https://via.placeholder.com/250x200?text=Novel" 
-    },
-    {   id: 9, 
-        name: "Novel", 
-        price: 14.99, 
-        category: "Blogs", 
-        image: "https://via.placeholder.com/250x200?text=Novel" 
     }
 ]
 
